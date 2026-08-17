@@ -12,11 +12,11 @@ Features
 
 Technologies
 
-HTML
-CSS
-JavaScript
-Python
-Flask
+HTML,
+CSS,
+JavaScript,
+Python,
+Flask,
 SQLite
 
 Setup and Usage
