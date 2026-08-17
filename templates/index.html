@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Password Strength Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="logo">
+            🔐
+        </div>
+
+        <div>
+            <h1>Password Strength Analyzer</h1>
+
+            <p>
+                Analyze your password security
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- PASSWORD CARD -->
+
+    <div class="card">
+
+        <label>
+            Enter Password
+        </label>
+
+        <div class="password-box">
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password..."
+                oninput="analyzePassword()"
+            >
+
+            <button
+                class="eye-btn"
+                onclick="togglePassword()"
+                id="eyeButton">
+                👁
+            </button>
+
+        </div>
+
+
+        <!-- STRENGTH -->
+
+        <div class="strength-section">
+
+            <div class="strength-header">
+
+                <span>
+                    Password Strength
+                </span>
+
+                <span id="strengthText">
+                    -
+                </span>
+
+            </div>
+
+            <div class="strength-bar">
+
+                <div
+                    id="strengthProgress"
+                    class="strength-progress">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHECKS -->
+
+        <div class="checks">
+
+            <div id="check0">
+                ❌ At least 12 characters
+            </div>
+
+            <div id="check1">
+                ❌ Uppercase letter
+            </div>
+
+            <div id="check2">
+                ❌ Lowercase letter
+            </div>
+
+            <div id="check3">
+                ❌ Number
+            </div>
+
+            <div id="check4">
+                ❌ Special character
+            </div>
+
+            <div id="check5">
+                ❌ Not a common password
+            </div>
+
+            <div id="check6">
+                ❌ No repeated characters
+            </div>
+
+        </div>
+
+
+        <!-- SUGGESTIONS -->
+
+        <div class="suggestions">
+
+            <h3>
+                💡 Security Suggestions
+            </h3>
+
+            <ul id="suggestionsList">
+
+                <li>
+                    Enter a password to begin analysis.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- GENERATOR CARD -->
+
+    <div class="card generator">
+
+        <h2>
+            ✨ Generate Strong Password
+        </h2>
+
+        <p>
+            Generate a random 16-character secure password.
+        </p>
+
+
+        <div class="generated-box">
+
+            <input
+                type="text"
+                id="generatedPassword"
+                readonly
+                placeholder="Your generated password..."
+            >
+
+            <button onclick="copyPassword()">
+                📋
+            </button>
+
+        </div>
+
+
+        <button
+            class="generate-btn"
+            onclick="generatePassword()">
+
+            Generate Password
+
+        </button>
+
+
+        <p
+            id="copyMessage"
+            class="copy-message">
+        </p>
+
+    </div>
+
+
+    <!-- SECURITY INFORMATION -->
+
+    <div class="info">
+
+        <div>
+            🛡️
+            <strong>Secure</strong>
+            <span>
+                Passwords are analyzed locally by the application.
+            </span>
+        </div>
+
+        <div>
+            🔑
+            <strong>Cryptographic Hashing</strong>
+            <span>
+                Password history stores hashes instead of plain passwords.
+            </span>
+        </div>
+
+        <div>
+            ⚡
+            <strong>Strong Generation</strong>
+            <span>
+                Secure random generation is used for new passwords.
+            </span>
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        Password Strength Analyzer
+        © 2026
+
+    </footer>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}">
+</script>
+
+</body>
+
+</html>
