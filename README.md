@@ -29,6 +29,6 @@ python app.py
 4.Launch your web browser and visit: 
 http://127.0.0.1:5000
 
-Project Purpose
+Project Purpose:
 This project helps users understand password security by analyzing password characteristics and providing useful recommendations for creating stronger passwords.
 
